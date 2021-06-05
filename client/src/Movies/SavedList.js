@@ -1,8 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
-  Link,
-  Route,
+  Link
 } from "react-router-dom";
 
 export default function SavedList(props) {
@@ -13,9 +11,6 @@ export default function SavedList(props) {
         <span className="saved-movie">{movie.title}</span>
       ))}
       <Link className="home-button" to="/">Home</Link>
-      {/* <Router>
-        <Route path="/"></Route>
-      </Router> */}
     </div>
   );
 }

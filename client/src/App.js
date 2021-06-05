@@ -28,22 +28,25 @@ export default function App () {
 
   // eslint-disable-next-line
   const addToSavedList = id => {
-    // This is stretch. Prevent the same movie from being "saved" more than once
+     const movies = saved ;
+     const mov = movieList.find(element => element.id === id);
+     movies.push(mov);
+     setSaved(movies);
+     console.log(saved)
   };
 
   return (
     <div>
       <Router>
-      <SavedList list={[ /* This is stretch */]} />
+      <SavedList list={saved} />
 
       <div>
-        
           <Switch>
           <Route exact path="/">
             <MovieList movies={movieList}/>
           </Route>
           <Route exact path="/movies/:id">
-            <Movie />
+            <Movie addToSavedList={addToSavedList}/>
           </Route>
           </Switch>
       </div>
