@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+} from "react-router-dom";
 
 export default function SavedList(props) {
   return (
@@ -7,7 +12,10 @@ export default function SavedList(props) {
       {props.list.map(movie => (
         <span className="saved-movie">{movie.title}</span>
       ))}
-      <div className="home-button">Home</div>
+      <Link className="home-button" to="/">Home</Link>
+      {/* <Router>
+        <Route path="/"></Route>
+      </Router> */}
     </div>
   );
 }
