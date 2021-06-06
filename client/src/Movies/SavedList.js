@@ -8,7 +8,7 @@ export default function SavedList(props) {
     <div key={props.list.id} className="saved-list">
       <h3>Saved Movies:</h3>
       {props.list.map(movie => (
-        <NavLink className="home-button" to={`/movies/${movie.id}`}>{movie.title}</NavLink>
+        <NavLink key={movie.id} className="home-button" to={`/movies/${movie.id}`}>{movie.title}</NavLink>
       ))}
       <NavLink className="home-button" to="/">Home</NavLink>
     </div>
