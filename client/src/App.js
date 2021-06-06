@@ -26,19 +26,19 @@ export default function App () {
     getMovies();
   }, []);
 
-  // eslint-disable-next-line
+
   const addToSavedList = id => {
-     const movies = saved ;
-     const mov = movieList.find(element => element.id === id);
-     movies.push(mov);
-     setSaved(movies);
-     console.log(saved)
+    if (saved.length === 0){
+    setSaved([...saved,movieList[id]])
+    }else{
+        (!saved.find(item=>(item.id===Number(id)))) ? setSaved([...saved,movieList[id]]) : console.log('movie already exist');
+    }
   };
 
   return (
     <div>
       <Router>
-      <SavedList list={saved} />
+      <SavedList key={saved.id} list={saved} />
 
       <div>
           <Switch>
