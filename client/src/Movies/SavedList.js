@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Link
+  Link , NavLink
 } from "react-router-dom";
 
 export default function SavedList(props) {
@@ -8,9 +8,9 @@ export default function SavedList(props) {
     <div key={props.list.id} className="saved-list">
       <h3>Saved Movies:</h3>
       {props.list.map(movie => (
-        <Link className="home-button" to={`/movies/${movie.id}`}>{movie.title}</Link>
+        <NavLink className="home-button" to={`/movies/${movie.id}`}>{movie.title}</NavLink>
       ))}
-      <Link className="home-button" to="/">Home</Link>
+      <NavLink className="home-button" to="/">Home</NavLink>
     </div>
   );
 }
